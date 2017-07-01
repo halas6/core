@@ -1,0 +1,47 @@
+@model IEnumerable<Magazyn3.Models.Towary>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>Lista</h2>
+
+<p>
+    @Html.ActionLink("Dodaj nowy", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Nazwa towaru</p>
+        </th>
+        <th>
+            <p>Cena</p>
+        </th>
+        <th>
+            <p>Stan na magazynie</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaTowaru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Magazyn)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdTowaru }) |
+            @Html.ActionLink("Detale", "Details", new { id=item.IdTowaru }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdTowaru })
+        </td>
+    </tr>
+}
+
+</table>
