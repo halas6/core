@@ -25,7 +25,7 @@ else if (SignInManager.IsSignedIn(User) && User.IsInRole("Uzytkownik"))
             <li>
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Cześć @UserManager.GetUserName(User)!</a>
             </li>
-            <li><a asp-area="" asp-controller="Zobacz Towary" asp-action="Index">Towary</a></li>
+            <li><a asp-area="" asp-controller="UzytkownikTowary" asp-action="Index">Zobacz Towary</a></li>
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Wyloguj</button>
             </li>
